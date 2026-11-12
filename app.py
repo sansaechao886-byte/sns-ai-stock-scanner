@@ -119,6 +119,8 @@ def scan_market(tickers, asset_type):
 
             price = float(data["Close"].iloc[-1])
 
+            rsi = calculate_rsi(data["Close"])
+            
             if price <= 0:
                 continue
 
@@ -222,6 +224,7 @@ def scan_market(tickers, asset_type):
                 "Symbol": ticker,
                 "Type": asset_type,
                 "Price": round(price, 6),
+                "RSI": round(float(rsi), 2),
                 "5m Change %": round(change, 2),
                 "Volume Ratio": round(volume_ratio, 2),
                 "Score": score,
