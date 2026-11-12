@@ -47,7 +47,10 @@ stocks = [
     "ACHR", "JOBY", "SOUN", "IONQ", "BBAI",
     "F", "NIO", "RKLB", "HIMS", "MARA",
     "RIOT", "CLSK", "BITF", "WULF", "QBTS",
-    "RGTI", "SIRI", "LYFT", "SNAP", "PFE"
+    "RGTI", "SIRI", "LYFT", "SNAP", "PFE",
+    "HOOD", "HIMS", "DNA", "RKLB", "ASTS",
+    "T", "NOK", "WBD", "BTG", "GOLD",
+    "CLOV", "TLRY", "GRAB", "QS", "CHPT",
 ]
 
 # ==========================================
