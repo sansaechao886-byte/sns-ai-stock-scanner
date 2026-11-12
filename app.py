@@ -122,6 +122,9 @@ def scan_market(tickers, asset_type):
 
             price = float(data["Close"].iloc[-1])
 
+            ema9 = float(data["Close"].ewm(span=9, adjust=False).mean().iloc[-1])
+            ema20 = float(data["Close"].ewm(span=20, adjust=False).mean().iloc[-1])
+            
             rsi = calculate_rsi(data["Close"])
             
             if price <= 0:
