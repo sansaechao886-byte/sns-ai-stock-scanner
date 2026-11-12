@@ -211,7 +211,17 @@ def scan_market(tickers, asset_type):
 
             if breakout and volume_ratio >= 2:
                 signal = "🚀 BREAKOUT ALERT"
-
+           elif (
+               not breakout
+               and ema9 > ema20
+               and 50 <= rsi <= 70
+               and previous_high > 0
+               and price >= previous_high * 0.98
+               and volume_ratio >= 1.5
+            ):
+               signal = "🟢 EARLY BREAKOUT"
+                  
+            
             elif change >= PRICE_ALERT:
                 signal = "🔥 PRICE SURGE"
 
