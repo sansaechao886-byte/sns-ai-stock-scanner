@@ -211,7 +211,7 @@ def scan_market(tickers, asset_type):
 
             if breakout and volume_ratio >= 2:
                 signal = "🚀 BREAKOUT ALERT"
-           elif (
+            elif (
                not breakout
                and ema9 > ema20
                and 50 <= rsi <= 70
