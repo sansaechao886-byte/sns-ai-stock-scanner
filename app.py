@@ -195,7 +195,8 @@ def scan_market(tickers, asset_type):
 
             if price > ma20:
                 score += 10
-
+            if ema9 > ema20:
+                score += 10
             if breakout:
                 score += 15
 
