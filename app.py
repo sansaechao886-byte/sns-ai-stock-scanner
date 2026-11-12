@@ -235,7 +235,8 @@ def scan_market(tickers, asset_type):
                 "Signal": signal
             })
 
-        except Exception:
+        except Exception as e:
+            st.error(f"Scanner error for {ticker}: {e}")
             # Skip symbols with unavailable data
             continue
 
