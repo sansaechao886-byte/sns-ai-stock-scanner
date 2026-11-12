@@ -149,7 +149,7 @@ def scan_market(tickers, asset_type):
 
             # Volume calculation
             current_volume = float(
-                data["Volume"].iloc[-1]
+                data["Volume"].iloc[-5:].max()
             )
 
             average_volume = float(
