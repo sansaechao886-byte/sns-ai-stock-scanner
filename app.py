@@ -3,6 +3,19 @@ import yfinance as yf
 import pandas as pd
 from datetime import datetime
 
+def calculate_rsi(prices, period=14):
+    delta = prices.diff()
+    gains = delta.clip(lower=0)
+    losses = -delta.clip(upper=0)
+
+    avg_gain = gains.ewm(alpha=1 / period, adjust=False).mean()
+    avg_loss = losses.ewm(alpha=1 / period, adjust=False).mean()
+
+    rs = avg_gain / avg_loss.replace(0, float("nan"))
+    rsi = 100 - (100 / (1 + rs))
+
+    return rsi.fillna(100).iloc[-1]
+
 # ==========================================
 # SNS AI STOCK & CRYPTO SCANNER
 # ==========================================
